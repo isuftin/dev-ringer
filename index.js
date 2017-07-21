@@ -1,4 +1,5 @@
-const http = require('http');
+const fs = require('fs');
+const https = require('https');
 const httpProxy = require('http-proxy');
 
 const proxy = httpProxy.createProxyServer({
@@ -12,7 +13,7 @@ proxy.on('proxyRes', function(proxyRes, req, res, options){
   const headers = proxyRes.headers;
   for (let header in headers) {
     if (header && headers[header] && 'string' === typeof headers[header]) {
-      headers[header] = headers[header].replace(/https:\/\/predev\.my\.wisc\.edu/g, "http://localhost:8080");
+      headers[header] = headers[header].replace(/predev\.my\.wisc\.edu/g, "localhost:8443");
     }
   }
   for (let header in headers) {
@@ -21,8 +22,11 @@ proxy.on('proxyRes', function(proxyRes, req, res, options){
   }
 });
 
-const server = http.createServer(function(req, res) {
+const server = https.createServer({
+  key: fs.readFileSync('localhost-private.pem'),
+  cert: fs.readFileSync('localhost-public.pem')
+}, function(req, res) {
   proxy.web(req, res);
 });
 
-server.listen(8080);
+server.listen(8443);
