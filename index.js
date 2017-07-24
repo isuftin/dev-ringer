@@ -53,6 +53,13 @@ loginProxy.on('proxyRes', function(proxyRes, req, res, options){
 });
 
 const loginConnect = connect();
+loginConnect.use(function(req, res, next) {
+  let _write = res.write;
+  res.write = function(data) {
+    _write.call(res, data.toString().replace(/predev\.my\.wisc\.edu/g, "localhost:8443"));
+  };
+  next();
+});
 loginConnect.use(function(req, res) {
   loginProxy.web(req, res);
 })
