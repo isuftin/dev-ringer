@@ -9,13 +9,6 @@ can run the server, you need to generate them.
 npm run gen-cert
 ```
 
-The command will ask you various questions, you can just hit enter for most of
-them except for this question:
-```
-Common Name (eg, YOUR name) []:
-```
-type in `localhost` and you're good to go.
-
 ## How to use
 Pull down and make changes in `uw-frame`, then build so they can be used in
 `angularjs-portal`
