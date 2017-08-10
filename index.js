@@ -40,8 +40,10 @@ const predevConnect = connect();
 predevConnect.use(function(req, res, next) {
   const inUrl = new URL(req.url, 'https://localhost:8443/');
   if (inUrl.pathname.startsWith('/web')) {
+    console.log('LOCAL  ' + inUrl.pathname);
     localProxy.web(req, res);
   } else {
+    console.log('PREDEV ' + inUrl.pathname);
     predevProxy.web(req, res);
   }
 });

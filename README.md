@@ -21,7 +21,7 @@ mvn clean install
 Run your `angularjs-portal`
 ```
 cd angularjs-portal
-mvn clean package jetty:run
+npm start
 ```
 
 Start the predev-proxy
