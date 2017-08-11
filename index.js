@@ -50,6 +50,13 @@ predev = new ProxyEndpoint(predev, [
   new Rule({
     handler: rewriteHeader(
       LOCATION,
+      addressify(HTTP, predev.source.host, predev.source.port),
+      addressify(HTTPS, predev.source.host, predev.source.port)
+    ),
+  }),
+  new Rule({
+    handler: rewriteHeader(
+      LOCATION,
       predev.target.host,
       addressify(null, predev.source.host, predev.source.port)
     ),
