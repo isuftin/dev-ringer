@@ -9,71 +9,173 @@ const sslConfig = {
   key: fs.readFileSync('localhost-private.pem'),
   cert: fs.readFileSync('localhost-public.pem')
 };
+const createServer = function(protocol, handler) {
+  var server = {
+    http: function(handler) {
+      return http.createServer(handler);
+    },
+    https: function(handler) {
+      return https.createServer(sslConfig, handler)
+    }
+  };
+  return server[protocol](handler);
+};
 const LOCATION = 'location'
 const HTTPS = 'https';
 const HTTP = 'http';
-const host = {
-  'local': 'localhost',
-  'predev': 'predev.my.wisc.edu',
-  'login': 'logintest.wisc.edu',
+
+class Locator {
+  /**
+   * Creates an Locator
+   * @param  {string} protocol http or https
+   * @param  {string} host     Hostname
+   * @param  {number} port     Leave blank if standard (80 or 443)
+   */
+  constructor({protocol, host, port}) {
+    this.protocol = protocol;
+    this.host = host;
+    this.port = port;
+  }
 }
 
-///////////////////////////////////////
-// HTTPS REDIRECT
-///////////////////////////////////////
-http.createServer(function (req, res) {
-    res.writeHead(301, { LOCATION: addressify(HTTPS, host.local, 8443, req.url) });
-    res.end();
-}).listen(8081);
+class Rule {
+  /**
+   * Creates a Rule
+   * @param  {string} name For logging purposes
+   * @param  {Function} handler (req, res) return true to continue the chain.
+   * @param  {string} path Optional
+   * @return {[type]}         [description]
+   */
+  constructor({name, handler, path}) {
+    this.name = name;
+    this.handler = handler;
+    this.path = path;
+  }
+}
 
-///////////////////////////////////////
-// LOCAL STUB
-///////////////////////////////////////
-const localProxy = httpProxy.createProxyServer({
-  target: addressify(HTTP, host.local, 8080),
-  changeOrigin: true,
-  autoRewrite: true
-});
+class ProxyEndpoint {
+  /**
+   * Creates a ProxyServer
+   * @param  {Locator} source Where the proxy will live
+   * @param  {Locator} target Where the proxy will point to
+   * @param  {Array<Rule>} rules Any additional middleware rules
+   */
+  constructor({ source, target = {}, rules = [] }) {
+    this.source = source;
+    this.target = target;
+    this.proxy = httpProxy.createProxyServer({
+      target: addressify(target.protocol, target.host, target.port),
+      secure: false,
+      changeOrigin: true,
+      autoRewrite: true
+    });
+    this.proxy.on('proxyRes', rewriteRedirects);
+    this.middleware = connect();
+    rules.forEach(function(rule) {
+      const args = [];
+      if (rule.path) {
+        args.push(rule.path);
+      }
+      args.push(function(req, res, next) {
+        const result = rule.handler(req, res);
+        if (result) {
+          next();
+        }
+      });
+      this.middleware.use.apply(this.middleware, args);
+    }, this);
+    this.middleware.use(this.proxy.web.bind(this.proxy));
+    if (this.source) {
+      this.endpoint = createServer(source.protocol, this.middleware);
+    }
+  }
 
-///////////////////////////////////////
-// PREDEV SERVER
-///////////////////////////////////////
-const predevProxy = httpProxy.createProxyServer({
-  target: addressify(HTTPS, host.predev), 
-  secure: false,
-  changeOrigin: true,
-  autoRewrite: true
-});
-predevProxy.on('proxyRes', rewriteRedirects);
-const predevConnect = connect()
-  .use('/web', function(req, res) {
-    req.url = req.originalUrl;
-    console.log('LOCAL  ' + req.url);
-    localProxy.web(req, res);
-  })
-  .use(function(req, res) {
-    console.log('PREDEV ' + req.url);
-    predevProxy.web(req, res);
-  });
-https.createServer(sslConfig, predevConnect).listen(8443);
+  listen() {
+    if (this.source) {
+      this.endpoint.listen(this.source.port);
+    }
+    return this;
+  }
+}
 
-///////////////////////////////////////
-// LOGIN SERVER
-///////////////////////////////////////
-const loginProxy = httpProxy.createProxyServer({
-  target: addressify(HTTPS, host.login),
-  secure: false,
-  changeOrigin: true,
-  autoRewrite: true
+class RedirectEndpoint {
+  /**
+   * Creates a simple RedirectServer
+   * @param  {Locator} source Where the server will live
+   * @param  {Locator} target Where the server will point to
+   */
+  constructor({ source = {}, target = {} }) {
+    this.source = source;
+    this.target = target;
+    this.endpoint = createServer(source.protocol, function (req, res) {
+      res.writeHead(301, {
+        [LOCATION]: addressify(target.protocol, target.host, target.port, req.url)
+      });
+      res.end();
+    });
+  }
+
+  listen() {
+    this.endpoint.listen(this.source.port);
+    return this;
+  }
+}
+
+const local = new ProxyEndpoint({
+  target: new Locator({
+    protocol: HTTP,
+    host: 'localhost',
+    port: 8080,
+  }),
 });
-loginProxy.on('proxyRes', rewriteRedirects);
-const loginConnect = connect()
-  .use(rewriteBody(host.predev, addressify(null, host.local, 8443)))
-  .use(function(req, res) {
-    console.log('LOGIN  ' + req.url);
-    loginProxy.web(req, res);
-  });
-https.createServer(sslConfig, loginConnect).listen(8444);
+const predev = new ProxyEndpoint({
+  source: new Locator({
+    protocol: HTTPS,
+    host: 'localhost',
+    port: 8443,
+  }),
+  target: new Locator({
+    protocol: HTTPS,
+    host: 'predev.my.wisc.edu',
+  }),
+  rules: [
+    new Rule({
+      path: '/web',
+      handler: function(req, res) {
+        req.url = req.originalUrl;
+        local.proxy.web(req, res);
+        return false;
+      },
+    })
+  ]
+}).listen();
+const login = new ProxyEndpoint({
+  source: new Locator({
+    protocol: HTTPS,
+    host: 'localhost',
+    port: 8444,
+  }),
+  target: new Locator({
+    protocol: HTTPS,
+    host: 'logintest.wisc.edu',
+  }),
+  rules: [
+    new Rule({
+      handler: rewriteBody(
+        predev.target.host,
+        addressify(null, predev.source.host, predev.source.port)
+      ),
+    }),
+  ],
+}).listen();
+const redirect = new RedirectEndpoint({
+  source: new Locator({
+    protocol: HTTP,
+    host: 'localhost',
+    port: 8081,
+  }),
+  target: predev.source,
+}).listen();
 
 ///////////////////////////////////////
 // HELPER FUNCTIONS
@@ -144,25 +246,32 @@ function rewrite(content, search, replace) {
  * @param  {http.ClientRequest} req the request from the http server
  * @param  {http.ServerResponse} res the response from the http server
  * @param  {Object} options the configuration object of the proxy
- * @return {void}
  */
 function rewriteRedirects(proxyRes, req, res, options) {
-  proxyRes.headers[LOCATION] = rewrite(proxyRes.headers[LOCATION], host.predev, addressify(null, host.local, 8443));
-  proxyRes.headers[LOCATION] = rewrite(proxyRes.headers[LOCATION], host.login, addressify(null, host.local, 8444));
+  proxyRes.headers[LOCATION] = rewrite(
+    proxyRes.headers[LOCATION],
+    predev.target.host,
+    addressify(null, predev.source.host, predev.source.port)
+  );
+  proxyRes.headers[LOCATION] = rewrite(
+    proxyRes.headers[LOCATION],
+    login.target.host,
+    addressify(null, login.source.host, login.source.port)
+  );
 }
 
 /**
  * Creates a middleware callback ready to rewrite the body.
  * @param  {string} search search for this within the response body
  * @param  {string} replace replace the match with this
- * @return {void}
+ * @return {function} a middleware filter
  */
 function rewriteBody(search, replace) {
-  return function(req, res, next) {
+  return function(req, res) {
     let _write = res.write;
     res.write = function(data) {
       _write.call(res, rewrite(data.toString(), search, replace));
     };
-    next();
+    return true;
   };
 }
