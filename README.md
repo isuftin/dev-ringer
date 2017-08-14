@@ -24,10 +24,15 @@ cd angularjs-portal
 npm start
 ```
 
-Start the predev-proxy
+Start the predev-proxy using `/web` default local path
 ```
 cd predev-proxy
 npm start
 ```
 
 Direct your browser to [http://localhost:8081]() or [https://localhost:8443]()
+
+If you're developing a frame app locally, you can specify the path you'd like to proxy:
+```
+npm start -- '/widget-creator'
+```

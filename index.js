@@ -6,6 +6,9 @@ const Rule = require('./lib/Rule');
 const { HTTP, HTTPS, LOCATION, addressify } = require('./lib/common');
 const { rewriteBody, rewriteHeader } = require('./lib/rewrites');
 
+let config = {
+  path: process.argv[2] || '/web',
+};
 
 let local = {
   target: new Locator({
@@ -69,7 +72,7 @@ predev = new ProxyEndpoint(predev, [
     ),
   }),
   new Rule({
-    path: '/web',
+    path: config.path,
     handler: function(req, res) {
       req.url = req.originalUrl;
       local.proxy.web(req, res);
