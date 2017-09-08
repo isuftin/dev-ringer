@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "devrev": "./cli.js"
+  },
   "scripts": {
     "gen-cert": "openssl req -x509 -days 365 -nodes -newkey rsa:2048 -keyout localhost-private.pem -out localhost-public.pem -subj '/C=US/ST=Wisconsin/L=Madison/O=UW Madison DoIT/OU=MyUW/CN=localhost'",
     "start": "node index.js",
