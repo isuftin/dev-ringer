@@ -69,3 +69,6 @@ localhost-public.pem
 
 dist/
 work/
+
+package-lock.json
+yarn.lock
