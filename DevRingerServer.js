@@ -2,16 +2,30 @@ const connect = require('connect');
 const { URL } = require('url');
 
 const { HTTP, HTTPS, LOCATION, createServer, addressify } = require('./lib/common');
-const DevRepConfig = require('./lib/DevRepConfiguration');
+const DevRingerConfig = require('./lib/DevRingerConfiguration');
 const Locator = require('./lib/Locator');
 const ProxyEndpoint = require('./lib/ProxyEndpoint');
 const { rewriteBody, rewriteHeader } = require('./lib/rewrites');
 const Rule = require('./lib/Rule');
 
-class DevRepServer {
+class DevRingerServer {
   constructor(config) {
-    let drpConf = DevRepConfig.fromHAR('work/predev.har.json');
-    // let drpConf = DevRepConfig.fromDRP('work/predev.drp.json');
+    let drpConf = null;
+
+    if (config.harFile) {
+      drpConf = DevRingerConfig.fromHAR(config.harFile, config.harOptions);
+      if (config.outputFile) {
+        drpConf.then((conf) => {
+          DevRingerConfig.toDRP(config.outputFile, JSON.stringify(conf, null, 2));
+        })
+      }
+    } else if (config.configFile) {
+      drpConf = DevRingerConfig.fromDRP(config.configFile);
+    }
+
+    if (!drpConf) {
+      throw new Error('No configuration found!');
+    }
     drpConf.then((conf) => {
       console.log(JSON.stringify(conf, null, 2));
       let proxies = [];
@@ -22,8 +36,8 @@ class DevRepServer {
           host: sourceUrl.hostname,
           port: sourceUrl.port
         });
-        let allPaths = (el) => {return '*' === el.path};
-        let targetPath = value.proxyPaths.find(allPaths);
+        let isAllPaths = (el) => {return '*' === el.path};
+        let targetPath = value.proxyPaths.find(isAllPaths);
         let targetUrl = targetPath ? new URL(targetPath.origin) : null;
         let target = undefined;
         if (targetUrl) {
@@ -34,6 +48,26 @@ class DevRepServer {
           });
         }
         let rules = [];
+        value.proxyPaths.forEach(({path, rewrites = [], origin}) => {
+          if (!isAllPaths(path)) {
+            let originUrl = new URL(origin);
+            let offshoot = new ProxyEndpoint({
+              target: new Locator({
+                protocol: originUrl.protocol.slice(0, -1),
+                host: originUrl.hostname,
+                port: originUrl.port
+              })
+            });
+            rules.push(new Rule({
+              path: path,
+              handler: function(req, res) {
+                req.url = req.originalUrl;
+                offshoot.proxy.web(req, res);
+                return false;
+              },
+            }));
+          }
+        });
         value.contentRewrites.forEach(({search, replace}) => {
           if (search && replace) {
             rules.push(new Rule({
@@ -68,4 +102,4 @@ class DevRepServer {
   }
 }
 
-module.exports = DevRepServer;
+module.exports = DevRingerServer;

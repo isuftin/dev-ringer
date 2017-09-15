@@ -64,11 +64,5 @@ typings/
 
 # End of https://www.gitignore.io/api/node
 
-localhost-private.pem
-localhost-public.pem
-
 dist/
 work/
-
-package-lock.json
-yarn.lock

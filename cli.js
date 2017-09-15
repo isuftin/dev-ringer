@@ -1,19 +1,13 @@
 #!/usr/bin/env node
-let DevRepServer = require('./DevRepServer');
+let DevRingerServer = require('./DevRingerServer');
 let commandLine = require('command-line-args');
 
 let optionsDefinitions = [
   {
-    'name': 'port',
-    'type': Number,
-    'alias': 'p',
-    'defaultValue': 3000
-  },
-  {
     'name': 'file',
     'type': String,
     'alias': 'f',
-    'defaultValue': 'devrep.json'
+    'defaultValue': 'drp.json'
   },
   {
     'name': 'HAR',
@@ -21,19 +15,41 @@ let optionsDefinitions = [
     'alias': 'H'
   },
   {
-    'name': 'interactive',
-    'type': Boolean,
-    'alias': 'i'
+    'name': 'output',
+    'type': String,
+    'alias': 'o'
   },
+  {
+    'name': 'hostname',
+    'type': String,
+    'alias': 'n',
+    'defaultValue': 'localhost'
+  },
+  {
+    'name': 'startPort',
+    'type': Number,
+    'alias': 's',
+    'defaultValue': 8081
+  },
+  {
+    'name': 'startSecurePort',
+    'type': Number,
+    'alias': 'S',
+    'defaultValue': 8444
+  }
 ];
 
 let options = commandLine(optionsDefinitions);
 
 let config = {
-  port: options.port,
   configFile: options.file,
   harFile: options.HAR,
-  runEditor: options.interactive
+  outputFile: options.output,
+  harOptions: {
+    hostname: options.hostname,
+    startPort: options.startPort,
+    startSecurePort: options.startSecurePort
+  }
 }
 
-let server = new DevRepServer(config);
+let server = new DevRingerServer(config);
