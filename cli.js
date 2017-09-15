@@ -52,4 +52,4 @@ let config = {
   }
 }
 
-let server = new DevRingerServer(config);
+let server = new DevRingerServer(undefined, config);

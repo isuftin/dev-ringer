@@ -1,4 +1,5 @@
 const connect = require('connect');
+const Promise = require('promise');
 const { URL } = require('url');
 
 const { HTTP, HTTPS, LOCATION, createServer, addressify } = require('./lib/common');
@@ -9,18 +10,22 @@ const { rewriteBody, rewriteHeader } = require('./lib/rewrites');
 const Rule = require('./lib/Rule');
 
 class DevRingerServer {
-  constructor(config) {
+  constructor(config, cla) {
     let drpConf = null;
 
-    if (config.harFile) {
-      drpConf = DevRingerConfig.fromHAR(config.harFile, config.harOptions);
-      if (config.outputFile) {
-        drpConf.then((conf) => {
-          DevRingerConfig.toDRP(config.outputFile, JSON.stringify(conf, null, 2));
-        })
+    if (config) {
+      drpConf = Promise.resolve(config);
+    } else if (cla) {
+      if (cla.harFile) {
+        drpConf = DevRingerConfig.fromHAR(cla.harFile, cla.harOptions);
+        if (cla.outputFile) {
+          drpConf.then((conf) => {
+            DevRingerConfig.toDRP(cla.outputFile, JSON.stringify(conf, null, 2));
+          })
+        }
+      } else if (cla.configFile) {
+        drpConf = DevRingerConfig.fromDRP(cla.configFile);
       }
-    } else if (config.configFile) {
-      drpConf = DevRingerConfig.fromDRP(config.configFile);
     }
 
     if (!drpConf) {
