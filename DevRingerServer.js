@@ -1,6 +1,7 @@
 const connect = require('connect');
 const Promise = require('promise');
 const { URL } = require('url');
+const zlib = require('zlib');
 
 const { HTTP, HTTPS, LOCATION, createServer, addressify } = require('./lib/common');
 const DevRingerConfig = require('./lib/DevRingerConfiguration');
@@ -54,7 +55,7 @@ class DevRingerServer {
         }
         let rules = [];
         value.proxyPaths.forEach(({path, rewrites = [], origin}) => {
-          if (!isAllPaths(path)) {
+          if (!isAllPaths({path})) {
             let originUrl = new URL(origin);
             let offshoot = new ProxyEndpoint({
               target: new Locator({
