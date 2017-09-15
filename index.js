@@ -39,6 +39,12 @@ let login = {
     host: 'logintest.wisc.edu',
   })
 };
+let search  = {
+  target: new Locator({
+    protocol: HTTPS,
+    host: 'www.googleapis.com',
+  })
+}
 let redirect = {
   source: new Locator({
     protocol: HTTP,
@@ -49,9 +55,10 @@ let redirect = {
 };
 
 local = new ProxyEndpoint(local);
+search = new ProxyEndpoint(search);
 predev = new ProxyEndpoint(predev, [
   new Rule({
-    handler: rewriteHeader(
+    handler: rewriteHeader( // Handle weird non-https location
       LOCATION,
       addressify(HTTP, predev.source.host, predev.source.port),
       addressify(HTTPS, predev.source.host, predev.source.port)
@@ -76,6 +83,19 @@ predev = new ProxyEndpoint(predev, [
     handler: function(req, res) {
       req.url = req.originalUrl;
       local.proxy.web(req, res);
+      return false;
+    },
+  }),
+  new Rule({
+    path: '/aries/proxy/wiscedusearch',
+    handler: function(req, res) {
+      if ('/customsearch/v1') {
+        req.url = '/customsearch/v1' + req.url;
+      } else {
+        req.url = req.originalUrl;
+      }
+      console.log(req.url);
+      search.proxy.web(req, res);
       return false;
     },
   })

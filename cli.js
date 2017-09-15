@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-let DevRevServer = require('./DevRevServer');
+let DevRepServer = require('./DevRepServer');
 let commandLine = require('command-line-args');
 
 let optionsDefinitions = [
@@ -9,12 +9,31 @@ let optionsDefinitions = [
     'alias': 'p',
     'defaultValue': 3000
   },
+  {
+    'name': 'file',
+    'type': String,
+    'alias': 'f',
+    'defaultValue': 'devrep.json'
+  },
+  {
+    'name': 'HAR',
+    'type': String,
+    'alias': 'H'
+  },
+  {
+    'name': 'interactive',
+    'type': Boolean,
+    'alias': 'i'
+  },
 ];
 
 let options = commandLine(optionsDefinitions);
 
 let config = {
-  port: options.port
+  port: options.port,
+  configFile: options.file,
+  harFile: options.HAR,
+  runEditor: options.interactive
 }
 
-let server = new DevRevServer(config);
+let server = new DevRepServer(config);
