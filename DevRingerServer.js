@@ -54,6 +54,7 @@ class DevRingerServer {
           });
         }
         let rules = [];
+        let prxRules = [];
         value.proxyPaths.forEach(({path, rewrites = [], origin}) => {
           if (!isAllPaths({path})) {
             let originUrl = new URL(origin);
@@ -86,7 +87,7 @@ class DevRingerServer {
         });
         value.locationRewrites.forEach(({search, replace}) => {
           if (search && replace) {
-            rules.push(new Rule({
+            prxRules.push(new Rule({
               handler: rewriteHeader(
                 LOCATION,
                 new URL(search).host,
@@ -95,7 +96,7 @@ class DevRingerServer {
             }));
           }
         });
-        proxies.push(new ProxyEndpoint({source, target}, rules));
+        proxies.push(new ProxyEndpoint({source, target}, rules, prxRules));
       });
       proxies.forEach((proxy) => {
         proxy.listen();

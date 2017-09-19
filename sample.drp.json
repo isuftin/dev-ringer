@@ -54,6 +54,10 @@
         {
           "search": "https://predev.my.wisc.edu",
           "replace": "https://localhost:8445"
+        },
+        {
+          "search": "https://logintest.wisc.edu",
+          "replace": "https://localhost:8444"
         }
       ],
       "contentRewrites": [
