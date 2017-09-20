@@ -1,0 +1,15 @@
+---
+version: '3.3'
+
+services:
+  dev_ringer:
+    build:
+      context: .
+    image: dev-ringer
+    ports:
+      - "8081:8081"
+      - "8082:8082"
+      - "8444:8444"
+    volumes:
+      - "./docs/examples:/docs/examples"
+    command: [ "ringer", "-H", "/docs/examples/example.har.json", "-o", "/docs/examples/example.drp.json" ]
