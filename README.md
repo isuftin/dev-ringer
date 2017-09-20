@@ -1,4 +1,7 @@
 # Dev Ringer
+> **dead ringer:**
+> *noun,* a person or thing that closely resembles another
+
 A reverse proxy for developers. Mirror an entire environment locally, then intercept the paths you want to develop on.
 
 ## Installation
