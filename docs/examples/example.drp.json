@@ -1,0 +1,67 @@
+{
+  "entryPoint": "http://localhost:8081/",
+  "servers": {
+    "http://localhost:8081": {
+      "proxyPaths": [
+        {
+          "path": "*",
+          "origin": "http://www.example.com"
+        }
+      ],
+      "locationRewrites": [],
+      "contentRewrites": [
+        {
+          "search": "http://www.example.com",
+          "replace": "http://localhost:8081"
+        },
+        {
+          "search": "https://www.iana.org",
+          "replace": "https://localhost:8444"
+        },
+        {
+          "search": "http://www.iana.org",
+          "replace": "http://localhost:8082"
+        }
+      ]
+    },
+    "https://localhost:8444": {
+      "proxyPaths": [
+        {
+          "path": "*",
+          "origin": "https://www.iana.org"
+        }
+      ],
+      "locationRewrites": [
+        {
+          "search": "https://www.iana.org",
+          "replace": "https://localhost:8444"
+        }
+      ],
+      "contentRewrites": [
+        {
+          "search": "https://www.iana.org",
+          "replace": "https://localhost:8444"
+        }
+      ]
+    },
+    "http://localhost:8082": {
+      "proxyPaths": [
+        {
+          "path": "*",
+          "origin": "http://www.iana.org"
+        }
+      ],
+      "locationRewrites": [
+        {
+          "search": "https://localhost:8082",
+          "replace": "https://localhost:8444"
+        },
+        {
+          "search": "https://www.iana.org",
+          "replace": "https://localhost:8444"
+        }
+      ],
+      "contentRewrites": []
+    }
+  }
+}

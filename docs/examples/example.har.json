@@ -1,0 +1,1754 @@
+{
+  "log": {
+    "version": "1.2",
+    "creator": {
+      "name": "WebInspector",
+      "version": "537.36"
+    },
+    "pages": [
+      {
+        "startedDateTime": "2017-09-20T13:28:56.499Z",
+        "id": "page_1",
+        "title": "http://www.example.com/",
+        "pageTimings": {
+          "onContentLoad": 67.82799999928102,
+          "onLoad": 69.3500000052154
+        }
+      },
+      {
+        "startedDateTime": "2017-09-20T13:29:05.157Z",
+        "id": "page_2",
+        "title": "https://www.iana.org/domains/reserved",
+        "pageTimings": {
+          "onContentLoad": 456.2839999998687,
+          "onLoad": 537.7160000061849
+        }
+      }
+    ],
+    "entries": [
+      {
+        "startedDateTime": "2017-09-20T13:28:56.499Z",
+        "time": 34.13699999509845,
+        "request": {
+          "method": "GET",
+          "url": "http://www.example.com/",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate"
+            },
+            {
+              "name": "Host",
+              "value": "www.example.com"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            },
+            {
+              "name": "Upgrade-Insecure-Requests",
+              "value": "1"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/60.0.3112.113 Chrome/60.0.3112.113 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": 455,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Date",
+              "value": "Wed, 20 Sep 2017 13:28:56 GMT"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Fri, 09 Aug 2013 23:54:35 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "ECS (mdw/1275)"
+            },
+            {
+              "name": "Etag",
+              "value": "\"359670651\""
+            },
+            {
+              "name": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "name": "X-Cache",
+              "value": "HIT"
+            },
+            {
+              "name": "Content-Type",
+              "value": "text/html"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "max-age=604800"
+            },
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Content-Length",
+              "value": "606"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 27 Sep 2017 13:28:56 GMT"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 1270,
+            "mimeType": "text/html",
+            "compression": 664
+          },
+          "redirectURL": "",
+          "headersSize": 345,
+          "bodySize": 606,
+          "_transferSize": 951
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 1.57999999646563,
+          "dns": 2.8359999996610004,
+          "connect": 13.52500000211877,
+          "send": 0.06700000085400148,
+          "wait": 13.9829999970971,
+          "receive": 2.1459999989019494,
+          "ssl": -1
+        },
+        "serverIPAddress": "[2606:2800:220:1:248:1893:25c8:1946]",
+        "connection": "243707",
+        "pageref": "page_1"
+      },
+      {
+        "startedDateTime": "2017-09-20T13:28:56.594Z",
+        "time": 18.64700000442099,
+        "request": {
+          "method": "GET",
+          "url": "http://www.example.com/favicon.ico",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate"
+            },
+            {
+              "name": "Host",
+              "value": "www.example.com"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/60.0.3112.113 Chrome/60.0.3112.113 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "image/webp,image/apng,image/*,*/*;q=0.8"
+            },
+            {
+              "name": "Referer",
+              "value": "http://www.example.com/"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": 424,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Date",
+              "value": "Wed, 20 Sep 2017 13:28:56 GMT"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Thu, 14 Sep 2017 19:33:15 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "ECS (mdw/1392)"
+            },
+            {
+              "name": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "name": "X-Cache",
+              "value": "404-HIT"
+            },
+            {
+              "name": "Content-Type",
+              "value": "text/html"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "max-age=604800"
+            },
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Content-Length",
+              "value": "606"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 27 Sep 2017 13:28:56 GMT"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 1270,
+            "mimeType": "text/html",
+            "compression": 664
+          },
+          "redirectURL": "",
+          "headersSize": 337,
+          "bodySize": 606,
+          "_transferSize": 943
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 3.46200000785757,
+          "dns": -1,
+          "connect": -1,
+          "send": 0.11999999696854013,
+          "wait": 13.692000007722491,
+          "receive": 1.372999991872387,
+          "ssl": -1
+        },
+        "serverIPAddress": "[2606:2800:220:1:248:1893:25c8:1946]",
+        "connection": "243707",
+        "pageref": "page_1"
+      },
+      {
+        "startedDateTime": "2017-09-20T13:29:05.157Z",
+        "time": 69.22600000689272,
+        "request": {
+          "method": "GET",
+          "url": "https://www.iana.org/domains/reserved",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "Host",
+              "value": "www.iana.org"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            },
+            {
+              "name": "Upgrade-Insecure-Requests",
+              "value": "1"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/60.0.3112.113 Chrome/60.0.3112.113 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "name": "Referer",
+              "value": "http://www.example.com/"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": 506,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Date",
+              "value": "Wed, 20 Sep 2017 12:03:28 GMT"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Tue, 21 Jul 2015 00:49:48 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache"
+            },
+            {
+              "name": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "name": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "name": "Strict-Transport-Security",
+              "value": "max-age=47304003; preload"
+            },
+            {
+              "name": "Content-Type",
+              "value": "text/html; charset=UTF-8"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 20 Sep 2017 13:58:57 GMT"
+            },
+            {
+              "name": "Content-Security-Policy",
+              "value": "upgrade-insecure-requests"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Content-Length",
+              "value": "3093"
+            },
+            {
+              "name": "X-Cache-Hits",
+              "value": "512"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 9929,
+            "mimeType": "text/html",
+            "compression": 6836
+          },
+          "redirectURL": "",
+          "headersSize": 467,
+          "bodySize": 3093,
+          "_transferSize": 3560
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 1.42899999627844,
+          "dns": -1,
+          "connect": -1,
+          "send": 0.1060000067809499,
+          "wait": 65.4219999996712,
+          "receive": 2.269000004162123,
+          "ssl": -1
+        },
+        "serverIPAddress": "[2620:0:2d0:200::8]",
+        "connection": "243739",
+        "pageref": "page_2"
+      },
+      {
+        "startedDateTime": "2017-09-20T13:29:04.808Z",
+        "time": 1.4139999984763563,
+        "request": {
+          "method": "GET",
+          "url": "http://www.iana.org/domains/example",
+          "httpVersion": "unknown",
+          "headers": [
+            {
+              "name": "Upgrade-Insecure-Requests",
+              "value": "1"
+            },
+            {
+              "name": "Referer",
+              "value": "http://www.example.com/"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/60.0.3112.113 Chrome/60.0.3112.113 Safari/537.36"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 307,
+          "statusText": "Internal Redirect",
+          "httpVersion": "unknown",
+          "headers": [
+            {
+              "name": "Location",
+              "value": "https://www.iana.org/domains/example"
+            },
+            {
+              "name": "Non-Authoritative-Reason",
+              "value": "HSTS"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 0,
+            "mimeType": "x-unknown"
+          },
+          "redirectURL": "https://www.iana.org/domains/example",
+          "headersSize": -1,
+          "bodySize": -1,
+          "_transferSize": 0
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 0.0350000045727938,
+          "dns": -1,
+          "connect": -1,
+          "send": 0,
+          "wait": 0,
+          "receive": 1.3789999939035624,
+          "ssl": -1
+        },
+        "serverIPAddress": "",
+        "pageref": "page_1"
+      },
+      {
+        "startedDateTime": "2017-09-20T13:29:04.810Z",
+        "time": 346.1260000040056,
+        "request": {
+          "method": "GET",
+          "url": "https://www.iana.org/domains/example",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "Host",
+              "value": "www.iana.org"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            },
+            {
+              "name": "Upgrade-Insecure-Requests",
+              "value": "1"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/60.0.3112.113 Chrome/60.0.3112.113 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "name": "Referer",
+              "value": "http://www.example.com/"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": 505,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 302,
+          "statusText": "Found",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Date",
+              "value": "Wed, 20 Sep 2017 13:04:49 GMT"
+            },
+            {
+              "name": "Strict-Transport-Security",
+              "value": "max-age=47304003; preload"
+            },
+            {
+              "name": "Server",
+              "value": "Apache"
+            },
+            {
+              "name": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "name": "Content-Type",
+              "value": "text/html; charset=iso-8859-1"
+            },
+            {
+              "name": "Location",
+              "value": "https://www.iana.org/domains/reserved"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 20 Sep 2017 15:04:49 GMT"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "max-age=7200"
+            },
+            {
+              "name": "Content-Security-Policy",
+              "value": "upgrade-insecure-requests"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Content-Length",
+              "value": "221"
+            },
+            {
+              "name": "X-Cache-Hits",
+              "value": "11"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 0,
+            "mimeType": "text/html",
+            "compression": 0
+          },
+          "redirectURL": "https://www.iana.org/domains/reserved",
+          "headersSize": 436,
+          "bodySize": 0,
+          "_transferSize": 436
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 1.91700000141282,
+          "dns": 66.41100000706498,
+          "connect": 205.3179999929852,
+          "send": 0.07700000424000564,
+          "wait": 70.118999996338,
+          "receive": 2.284000001964614,
+          "ssl": 142.78499998908998
+        },
+        "serverIPAddress": "[2620:0:2d0:200::8]",
+        "connection": "243739",
+        "pageref": "page_1"
+      },
+      {
+        "startedDateTime": "2017-09-20T13:29:05.236Z",
+        "time": 67.97600000572857,
+        "request": {
+          "method": "GET",
+          "url": "https://www.iana.org/_css/2015.1/screen.css",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "Host",
+              "value": "www.iana.org"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/60.0.3112.113 Chrome/60.0.3112.113 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "text/css,*/*;q=0.1"
+            },
+            {
+              "name": "Referer",
+              "value": "https://www.iana.org/domains/reserved"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": 429,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Date",
+              "value": "Wed, 20 Sep 2017 13:21:10 GMT"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Mon, 18 Sep 2017 21:07:08 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache"
+            },
+            {
+              "name": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "name": "Strict-Transport-Security",
+              "value": "max-age=47304003; preload"
+            },
+            {
+              "name": "Content-Type",
+              "value": "text/css"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 27 Sep 2017 13:21:10 GMT"
+            },
+            {
+              "name": "Cache-control",
+              "value": "public, s-maxage=1800, max-age=7205"
+            },
+            {
+              "name": "Content-Security-Policy",
+              "value": "upgrade-insecure-requests"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Content-Length",
+              "value": "8783"
+            },
+            {
+              "name": "X-Cache-Hits",
+              "value": "50"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 45360,
+            "mimeType": "text/css",
+            "compression": 36577
+          },
+          "redirectURL": "",
+          "headersSize": 502,
+          "bodySize": 8783,
+          "_transferSize": 9285
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 1.83500000275671,
+          "dns": -1,
+          "connect": -1,
+          "send": 0.09800000407268006,
+          "wait": 64.53000000328761,
+          "receive": 1.5129999956115654,
+          "ssl": -1
+        },
+        "serverIPAddress": "[2620:0:2d0:200::8]",
+        "connection": "243739",
+        "pageref": "page_2"
+      },
+      {
+        "startedDateTime": "2017-09-20T13:29:05.236Z",
+        "time": 195.49800000095274,
+        "request": {
+          "method": "GET",
+          "url": "https://www.iana.org/_js/2013.1/jquery.js",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "Host",
+              "value": "www.iana.org"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/60.0.3112.113 Chrome/60.0.3112.113 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Referer",
+              "value": "https://www.iana.org/domains/reserved"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": 412,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Date",
+              "value": "Sun, 17 Sep 2017 05:34:00 GMT"
+            },
+            {
+              "name": "Strict-Transport-Security",
+              "value": "max-age=47304003; preload"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Mon, 22 Apr 2013 18:18:55 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache"
+            },
+            {
+              "name": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "name": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/javascript"
+            },
+            {
+              "name": "Expires",
+              "value": "Sun, 24 Sep 2017 05:34:00 GMT"
+            },
+            {
+              "name": "Content-Security-Policy",
+              "value": "upgrade-insecure-requests"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Content-Length",
+              "value": "93068"
+            },
+            {
+              "name": "X-Cache-Hits",
+              "value": "24929"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 93068,
+            "mimeType": "application/javascript",
+            "compression": 0
+          },
+          "redirectURL": "",
+          "headersSize": 444,
+          "bodySize": 93068,
+          "_transferSize": 93512
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 67.8679999982705,
+          "dns": -1,
+          "connect": -1,
+          "send": 0.06599999323960049,
+          "wait": 64.63600001006888,
+          "receive": 62.92799999937375,
+          "ssl": -1
+        },
+        "serverIPAddress": "[2620:0:2d0:200::8]",
+        "connection": "243739",
+        "pageref": "page_2"
+      },
+      {
+        "startedDateTime": "2017-09-20T13:29:05.237Z",
+        "time": 204.56199999898672,
+        "request": {
+          "method": "GET",
+          "url": "https://www.iana.org/_js/2013.1/iana.js",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "Host",
+              "value": "www.iana.org"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/60.0.3112.113 Chrome/60.0.3112.113 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Referer",
+              "value": "https://www.iana.org/domains/reserved"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": 410,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Date",
+              "value": "Sun, 17 Sep 2017 02:02:34 GMT"
+            },
+            {
+              "name": "Strict-Transport-Security",
+              "value": "max-age=47304003; preload"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Mon, 08 Aug 2016 18:14:43 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache"
+            },
+            {
+              "name": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/javascript"
+            },
+            {
+              "name": "Expires",
+              "value": "Sun, 24 Sep 2017 02:02:34 GMT"
+            },
+            {
+              "name": "Content-Security-Policy",
+              "value": "upgrade-insecure-requests"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Content-Length",
+              "value": "68"
+            },
+            {
+              "name": "X-Cache-Hits",
+              "value": "24845"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 68,
+            "mimeType": "application/javascript",
+            "compression": 0
+          },
+          "redirectURL": "",
+          "headersSize": 418,
+          "bodySize": 68,
+          "_transferSize": 486
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 5.08700001228135,
+          "dns": 2.9469999863067704,
+          "connect": 125.05500001134388,
+          "send": 0.05299999611401063,
+          "wait": 70.10500000615198,
+          "receive": 1.3149999867887345,
+          "ssl": 62.87399999564521
+        },
+        "serverIPAddress": "[2620:0:2d0:200::8]",
+        "connection": "243767",
+        "pageref": "page_2"
+      },
+      {
+        "startedDateTime": "2017-09-20T13:29:05.432Z",
+        "time": 68.18399998883251,
+        "request": {
+          "method": "GET",
+          "url": "https://www.iana.org/_img/2013.1/iana-logo-header.svg",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "Host",
+              "value": "www.iana.org"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/60.0.3112.113 Chrome/60.0.3112.113 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "image/webp,image/apng,image/*,*/*;q=0.8"
+            },
+            {
+              "name": "Referer",
+              "value": "https://www.iana.org/domains/reserved"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": 460,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Date",
+              "value": "Sun, 17 Sep 2017 09:38:39 GMT"
+            },
+            {
+              "name": "Strict-Transport-Security",
+              "value": "max-age=47304003; preload"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Fri, 04 Jan 2013 01:17:14 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache"
+            },
+            {
+              "name": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "name": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "name": "Content-Type",
+              "value": "image/svg+xml"
+            },
+            {
+              "name": "Expires",
+              "value": "Sun, 24 Sep 2017 09:38:39 GMT"
+            },
+            {
+              "name": "Content-Security-Policy",
+              "value": "upgrade-insecure-requests"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Content-Length",
+              "value": "32870"
+            },
+            {
+              "name": "X-Cache-Hits",
+              "value": "22365"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 32870,
+            "mimeType": "image/svg+xml",
+            "compression": 0
+          },
+          "redirectURL": "",
+          "headersSize": 435,
+          "bodySize": 32870,
+          "_transferSize": 33305
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 2.05899999127723,
+          "dns": -1,
+          "connect": -1,
+          "send": 0.07799999730195983,
+          "wait": 64.5670000085374,
+          "receive": 1.4799999917159141,
+          "ssl": -1
+        },
+        "serverIPAddress": "[2620:0:2d0:200::8]",
+        "connection": "243739",
+        "pageref": "page_2"
+      },
+      {
+        "startedDateTime": "2017-09-20T13:29:05.453Z",
+        "time": 66.9039999920642,
+        "request": {
+          "method": "GET",
+          "url": "https://www.iana.org/_css/2015.1/print.css",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "Host",
+              "value": "www.iana.org"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/60.0.3112.113 Chrome/60.0.3112.113 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "text/css,*/*;q=0.1"
+            },
+            {
+              "name": "Referer",
+              "value": "https://www.iana.org/domains/reserved"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": 428,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Date",
+              "value": "Wed, 20 Sep 2017 13:15:55 GMT"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Sat, 01 Oct 2016 16:44:02 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache"
+            },
+            {
+              "name": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "name": "Strict-Transport-Security",
+              "value": "max-age=47304003; preload"
+            },
+            {
+              "name": "Content-Type",
+              "value": "text/css"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 27 Sep 2017 13:15:55 GMT"
+            },
+            {
+              "name": "Cache-control",
+              "value": "public, s-maxage=1800, max-age=7205"
+            },
+            {
+              "name": "Content-Security-Policy",
+              "value": "upgrade-insecure-requests"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Content-Length",
+              "value": "7661"
+            },
+            {
+              "name": "X-Cache-Hits",
+              "value": "79"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 37683,
+            "mimeType": "text/css",
+            "compression": 30022
+          },
+          "redirectURL": "",
+          "headersSize": 502,
+          "bodySize": 7661,
+          "_transferSize": 8163
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 1.26099999761209,
+          "dns": -1,
+          "connect": -1,
+          "send": 0.07900000491644987,
+          "wait": 64.18799998937176,
+          "receive": 1.3760000001638986,
+          "ssl": -1
+        },
+        "serverIPAddress": "[2620:0:2d0:200::8]",
+        "connection": "243767",
+        "pageref": "page_2"
+      },
+      {
+        "startedDateTime": "2017-09-20T13:29:05.460Z",
+        "time": 230.49000000173692,
+        "request": {
+          "method": "GET",
+          "url": "https://www.iana.org/_img/2015.1/fonts/NotoSans-Bold.woff",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "Origin",
+              "value": "https://www.iana.org"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "Host",
+              "value": "www.iana.org"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/60.0.3112.113 Chrome/60.0.3112.113 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "name": "Referer",
+              "value": "https://www.iana.org/_css/2015.1/screen.css"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": 464,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Date",
+              "value": "Sun, 17 Sep 2017 09:05:47 GMT"
+            },
+            {
+              "name": "Strict-Transport-Security",
+              "value": "max-age=47304003; preload"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Wed, 26 Aug 2015 00:25:13 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache"
+            },
+            {
+              "name": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "name": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/font-woff"
+            },
+            {
+              "name": "Expires",
+              "value": "Sun, 24 Sep 2017 09:05:47 GMT"
+            },
+            {
+              "name": "Content-Security-Policy",
+              "value": "upgrade-insecure-requests"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Content-Length",
+              "value": "156596"
+            },
+            {
+              "name": "X-Cache-Hits",
+              "value": "23815"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 156596,
+            "mimeType": "application/font-woff",
+            "compression": 0
+          },
+          "redirectURL": "",
+          "headersSize": 444,
+          "bodySize": 156596,
+          "_transferSize": 157040
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 40.5060000048252,
+          "dns": -1,
+          "connect": -1,
+          "send": 0.05699999746870077,
+          "wait": 64.84999999520412,
+          "receive": 125.07700000423891,
+          "ssl": -1
+        },
+        "serverIPAddress": "[2620:0:2d0:200::8]",
+        "connection": "243739",
+        "pageref": "page_2"
+      },
+      {
+        "startedDateTime": "2017-09-20T13:29:05.466Z",
+        "time": 181.09899999399204,
+        "request": {
+          "method": "GET",
+          "url": "https://www.iana.org/_img/2015.1/fonts/SourceCodePro-Regular.woff",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "Origin",
+              "value": "https://www.iana.org"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "Host",
+              "value": "www.iana.org"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/60.0.3112.113 Chrome/60.0.3112.113 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "name": "Referer",
+              "value": "https://www.iana.org/_css/2015.1/screen.css"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": 472,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Date",
+              "value": "Sun, 17 Sep 2017 04:07:16 GMT"
+            },
+            {
+              "name": "Strict-Transport-Security",
+              "value": "max-age=47304003; preload"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Wed, 26 Aug 2015 00:25:13 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache"
+            },
+            {
+              "name": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "name": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/font-woff"
+            },
+            {
+              "name": "Expires",
+              "value": "Sun, 24 Sep 2017 04:07:16 GMT"
+            },
+            {
+              "name": "Content-Security-Policy",
+              "value": "upgrade-insecure-requests"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Content-Length",
+              "value": "89024"
+            },
+            {
+              "name": "X-Cache-Hits",
+              "value": "19439"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 89024,
+            "mimeType": "application/font-woff",
+            "compression": 0
+          },
+          "redirectURL": "",
+          "headersSize": 443,
+          "bodySize": 89024,
+          "_transferSize": 89467
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 53.7409999960801,
+          "dns": -1,
+          "connect": -1,
+          "send": 0.05600000440610131,
+          "wait": 64.51300000480879,
+          "receive": 62.78899998869704,
+          "ssl": -1
+        },
+        "serverIPAddress": "[2620:0:2d0:200::8]",
+        "connection": "243767",
+        "pageref": "page_2"
+      },
+      {
+        "startedDateTime": "2017-09-20T13:29:05.713Z",
+        "time": 68.7270000053104,
+        "request": {
+          "method": "GET",
+          "url": "https://www.iana.org/_img/bookmark_icon.ico",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "Host",
+              "value": "www.iana.org"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/60.0.3112.113 Chrome/60.0.3112.113 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "image/webp,image/apng,image/*,*/*;q=0.8"
+            },
+            {
+              "name": "Referer",
+              "value": "https://www.iana.org/domains/reserved"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            }
+          ],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": 450,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Date",
+              "value": "Wed, 13 Sep 2017 18:21:35 GMT"
+            },
+            {
+              "name": "Strict-Transport-Security",
+              "value": "max-age=47304003; preload"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Fri, 04 Jan 2013 01:17:14 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache"
+            },
+            {
+              "name": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "name": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "name": "Content-Type",
+              "value": "image/vnd.microsoft.icon"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 20 Sep 2017 18:21:35 GMT"
+            },
+            {
+              "name": "Content-Security-Policy",
+              "value": "upgrade-insecure-requests"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Content-Length",
+              "value": "7406"
+            },
+            {
+              "name": "X-Cache-Hits",
+              "value": "18840"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 7406,
+            "mimeType": "image/vnd.microsoft.icon",
+            "compression": 0
+          },
+          "redirectURL": "",
+          "headersSize": 445,
+          "bodySize": 7406,
+          "_transferSize": 7851
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 2.86300000152551,
+          "dns": -1,
+          "connect": -1,
+          "send": 0.10399999155197026,
+          "wait": 64.44100000953772,
+          "receive": 1.319000002695205,
+          "ssl": -1
+        },
+        "serverIPAddress": "[2620:0:2d0:200::8]",
+        "connection": "243739",
+        "pageref": "page_2"
+      }
+    ]
+  }
+}
